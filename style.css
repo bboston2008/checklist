@@ -1,5 +1,34 @@
+body {
+    margin: 0;
+}
+
+h1 {
+    text-align: center;
+}
+
 li {
     list-style: none;
+}
+
+#addItems {
+    display: flex;
+    justify-content: center;
+}
+
+#userInput {
+    border-radius: 15px;
+}
+
+#listDiv {
+    display: flex;
+    justify-content: center;
+}
+
+#delItems {
+    display: flex;
+    justify-content: center;
+    position: fixed;
+    margin-top: 10%;
 }
 
 .marked {
