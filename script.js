@@ -44,7 +44,7 @@ const lineThru = (event) => event.target.closest('input').checked ?
 
 // Remove selected items -------
 
-function remove() {
+const remove = () => {
     var checked = document.querySelectorAll(".box:checked");
     checked.forEach((elem) => {
         elem.parentElement.style.display = "none";
