@@ -16,25 +16,25 @@ li {
 }
 
 #userInput {
-    border-radius: 15px;
+    border-radius: 13px;
 }
 
-#listDiv {
+#listsContainer {
     display: flex;
-    justify-content: center;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin-top: 5rem;
 }
 
-#delItems {
-    display: flex;
-    justify-content: center;
-    position: fixed;
-    margin-top: 10%;
+.listOne,
+.listTwo {
+    border: 2px solid black;
+    width: 20rem;
+    height: 5rem;
+    margin-left: 2rem;
+    margin-right: 2rem;
 }
 
 .marked {
     text-decoration: line-through;
-}
-
-.listItemDiv {
-    display: flex;
 }
