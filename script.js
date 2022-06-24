@@ -7,6 +7,7 @@ const button = document.querySelector('#enter');
 
 // ----- Delete
 const ul = document.querySelector('ul');
+const listOne = document.querySelector('listOne');
 const checkbox = document.querySelectorAll('input[type=checkbox]');
 const delButton = document.querySelector('#erase');
 

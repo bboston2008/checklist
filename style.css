@@ -10,6 +10,10 @@ li {
     list-style: none;
 }
 
+.marked {
+    text-decoration: line-through;
+}
+
 #addItems {
     display: flex;
     justify-content: center;
@@ -21,20 +25,19 @@ li {
 
 #listsContainer {
     display: flex;
+    flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-around;
     margin-top: 5rem;
 }
 
-.listOne,
-.listTwo {
+.listDivOne,
+.listDivTwo {
     border: 2px solid black;
-    width: 20rem;
-    height: 5rem;
+    width: 40rem;
+    height: 15rem;
     margin-left: 2rem;
     margin-right: 2rem;
-}
-
-.marked {
-    text-decoration: line-through;
+    font-size: 1.5rem;
+    overflow: auto;
 }
