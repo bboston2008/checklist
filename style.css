@@ -14,7 +14,13 @@ li {
     text-decoration: line-through;
 }
 
-#addItems {
+#add-items {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.remove-items {
     display: flex;
     justify-content: center;
 }
@@ -23,21 +29,22 @@ li {
     border-radius: 13px;
 }
 
-#listsContainer {
+.list-one {
     display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    margin-top: 5rem;
+    overflow: hidden;
+    border: 2px solid black;
+    /* max-width: 20rem; */
+    min-height: 30rem;
+    font-size: 1rem;
+    margin: 1rem;
 }
 
-.listDivOne,
-.listDivTwo {
-    border: 2px solid black;
-    width: 40rem;
-    height: 15rem;
-    margin-left: 2rem;
-    margin-right: 2rem;
-    font-size: 1.5rem;
-    overflow: auto;
+/* .list-container {
+    display: grid;
+    justify-content: center;
+} */
+
+.lists {
+    display: grid;
+    grid-template-rows: 1fr, 1fr;
 }

@@ -1,13 +1,13 @@
 // Variables -----
 
 // ----- Create
+const button = document.querySelector('#enter-items');
+const userInput = document.querySelector('#user-input');
 const inputLength = () => userInput.value.length;
-const userInput = document.querySelector('#userInput');
-const button = document.querySelector('#enter');
 
 // ----- Delete
 const ul = document.querySelector('ul');
-const listOne = document.querySelector('listOne');
+const listOne = document.querySelector('list-one');
 const checkbox = document.querySelectorAll('input[type=checkbox]');
 const delButton = document.querySelector('#erase');
 

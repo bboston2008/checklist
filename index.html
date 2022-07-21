@@ -6,24 +6,35 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="style.css">
-    <title>Document</title>
+    <title>My List</title>
 </head>
 
 <body>
-    <h1>Checklist</h1>
-    <div id="addItems">
-        <label for="userInput">Add item: </label>
-        <input id="userInput" type="text" placeholder="...">
-        <button id="enter">Enter</button>
-        <button id="erase">Delete Checks</button>
-    </div>
-    <div id="listsContainer">
-        <div class="listDivOne">
-            <ul id="listOne">
-
-            </ul>
+    <h1>Checklist</h1> 
+    <div class="list-container">
+        <div id="add-items">
+                <label for="user-input">Add item </label>
+                <input id="user-input" type="text" placeholder="...">
+                <button id="enter-items">Enter</button>
         </div>
+        <div class="lists">
+            <div id="current-list-wrapper">
+                <div class="list-one">
+                    <ul>
+                    </ul>
+            </div>
+            <div id="finished-list-wrapper">
+                <div class="list-one">
+                    <ul>
+                    </ul>
+            </div>
+        </div>
+        <div class="remove-items">
+            <button id="erase">Delete Checks</button>
+        </div>
+    </div>
         <script type="text/javascript" src="script.js"></script>
 </body>
 
 </html>
+
