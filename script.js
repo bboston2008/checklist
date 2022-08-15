@@ -31,7 +31,7 @@ const newItem = () => {
     li.appendChild(document.createTextNode(userInput.value));
     ul.appendChild(div);
     div.appendChild(li);
-    div.classList.add('listItemDiv');
+    div.classList.add('item');
     userInput.value = '';
 }
 
