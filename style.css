@@ -20,6 +20,10 @@ li {
     justify-content: center;
 }
 
+#enter-items {
+    margin-left: 5px;
+}
+
 .remove-items {
     display: flex;
     justify-content: center;
@@ -51,4 +55,8 @@ li {
 
 .item {
     padding: .3rem;
+}
+
+label {
+    margin-right: 5px;
 }
