@@ -1,7 +1,7 @@
 // Variables -----
 
 // ----- Create
-const button = document.querySelector('#enter-items');
+const enter = document.querySelector('#enter-items');
 const userInput = document.querySelector('#user-input');
 const inputLength = () => userInput.value.length;
 
@@ -10,6 +10,8 @@ const ul = document.querySelector('ul');
 const listOne = document.querySelector('list-one');
 const checkbox = document.querySelectorAll('input[type=checkbox]');
 const delButton = document.querySelector('#erase');
+const active = document.getElementById('act-list')
+const finished = document.getElementById('fin-list');
 
 // Create list item ------
 
@@ -23,17 +25,56 @@ const addEnter = () => {
 
 const newItem = () => {
     let li = document.createElement('li');
-    let div = document.createElement('div');
-    let makeCheckbox = document.createElement('input');
-    makeCheckbox.type = "checkbox";
-    li.appendChild(makeCheckbox);
-    makeCheckbox.classList.add('box');
+    let moveButt = document.createElement('button');
+    li.classList.add('item');
+    moveButt.innerHTML = 'DONE';
+    moveButt.onclick = moveToDo;
+    moveButt.classList.add('done-button');
+    li.appendChild(moveButt);
     li.appendChild(document.createTextNode(userInput.value));
-    ul.appendChild(div);
-    div.appendChild(li);
-    div.classList.add('item');
+    active.appendChild(li);
     userInput.value = '';
 }
+
+// Move items ------
+
+const moveToDo = (evt) => {
+    let makeCheckbox = document.createElement('input');
+    makeCheckbox.type = 'checkbox';
+    evt.preventDefault();
+    let btn = evt.target;
+    let li = btn.closest('li');
+    btn.remove();
+    finished.appendChild(li).classList.add('marked');
+    li.appendChild(makeCheckbox).classList.add('box');
+}
+
+// Undo function is still under work. 
+
+// const moveToDo = (evt) => {
+//     let makeCheckbox = document.createElement('input');
+//     let undoButton = document.createElement('button');
+//     makeCheckbox.type = 'checkbox';
+//     evt.preventDefault();
+//     let btn = evt.target;
+//     let li = btn.closest('li');
+//     btn.remove();
+//     finished.appendChild(li).classList.add('marked');
+//     undoButton.innerHTML = 'UNDO';
+//     undoButton.onclick = undoToDo;
+//     undoButton.classList.add('undo-button');
+//     li.appendChild(makeCheckbox).classList.add('box');
+//     li.appendChild(undoButton);
+// }
+
+// const undoToDo = (evt) => {
+//     evt.preventDefault();
+//     let box = document.querySelector('box');
+//     let btn = evt.target;
+//     let li = btn.closest('li');
+//     btn.remove();
+//     active.appendChild(li).classList.remove('marked');
+// }
 
 // Strike items ------
 
@@ -46,16 +87,15 @@ const lineThru = (event) => event.target.closest('input').checked ?
 // Remove selected items -------
 
 const remove = () => {
-    let checked = document.querySelectorAll(".box:checked");
-    let top = checked.parentNode;
+    let checked = document.querySelectorAll('.box:checked');
     checked.forEach((elem) => {
-        elem.parentElement.style.display = "none";
+        elem.parentElement.remove();
     })
 }
+
 
 // Events ------
 
 delButton.addEventListener('click', remove);
-button.addEventListener('click', addButton);
+enter.addEventListener('click', addButton);
 userInput.addEventListener('keypress', addEnter);
-ul.addEventListener('click', lineThru)

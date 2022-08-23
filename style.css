@@ -14,7 +14,7 @@ li {
     text-decoration: line-through;
 }
 
-#add-items {
+#add-item {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -33,7 +33,7 @@ li {
     border-radius: 13px;
 }
 
-.list-one {
+.list-box {
     display: flex;
     overflow: hidden;
     border: 2px solid black;
@@ -59,4 +59,10 @@ li {
 
 label {
     margin-right: 5px;
+}
+
+.done-button {
+    margin-right: .25rem;
+    font-size: .65rem;
+    height: 1.25rem;
 }
