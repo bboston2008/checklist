@@ -1,3 +1,5 @@
+/* REDS------------ */
+
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
 
 body {
@@ -13,34 +15,99 @@ li {
     list-style: none;
 }
 
-.marked {
-    text-decoration: line-through;
+label {
+    margin-right: 5px;
+}
+
+ul {
+    padding-left: .25rem;
+}
+
+button {
+    transition: all .3s ease-in-out 0s;
+}
+
+/* Button Input / Delete -------- */
+
+#button-box {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
 }
 
 #add-item {
     display: flex;
     flex-wrap: wrap;
+    margin: 2.5rem;
+    border: 1px solid black;
+    padding: 2rem;
+    width: 25%;
+    min-width: 15rem;
+}
+
+#remove-items {
+    display: flex;
+    flex-wrap: wrap;
     justify-content: center;
+    margin: 2.5rem 1rem 2.5rem 2.5rem;
+    border: 1px solid black;
+    padding: 2rem;
+    width: 17.8%;
 }
 
 #enter-items {
     margin-left: 5px;
+    border-radius: 10px
 }
 
-.remove-items {
-    display: flex;
-    justify-content: center;
+#enter-items:hover {
+    background-color: rgba(0, 0, 255, 0.7);
+    border-radius: 10px;
 }
 
 #userInput {
     border-radius: 13px;
 }
 
+#erase {
+    height: fit-content;
+    border-radius: 10px;
+}
+
+#erase:hover {
+    background-color: rgb(255, 0, 0, 0.7);
+    border-radius: 10px;
+}
+
+/* List Boxes--------- */
+
+#list-container {
+    display: flex;
+    flex-wrap: wrap;
+    /* flex-direction: row; */
+}
+
+#active-list {
+    width: 75%;
+}
+
+#finished-list {
+    width: 25%;
+    min-width: 15rem;
+    overflow: auto;
+}
+
+#fin-list {
+    display: flex;
+    overflow: auto;
+    width: 100%;
+}
+
 .list-box {
     display: flex;
     overflow: hidden;
     border: 2px solid black;
-    height: 10rem;
+    height: 25rem;
     font-size: 1rem;
     margin: 1rem;
 }
@@ -56,13 +123,7 @@ li {
     grid-template-rows: 1fr, 1fr;
 }
 
-.item {
-    padding: .3rem;
-}
-
-label {
-    margin-right: 5px;
-}
+/* List Items-------- */
 
 .done-button, 
 .undo-button {
@@ -72,4 +133,12 @@ label {
     border-radius: 1rem;
     border: 3px solid rgb(96, 8, 212);
     background-color: red;
+}
+
+.item {
+    padding: .3rem;
+}
+
+.marked {
+    text-decoration: line-through;
 }
