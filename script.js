@@ -63,14 +63,6 @@ const undoToDo = (evt) => {
     active.appendChild(li).classList.remove('marked');
 }
 
-// Strike items ------
-
-const lineThru = (event) => event.target.closest('input').checked ?
-    event.target.closest('li').classList.add('marked') :
-    event.target.closest('li').classList.remove('marked');
-
-
-
 // Clear Completed List -------
 
 const remove = () => {
