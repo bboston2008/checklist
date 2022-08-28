@@ -7,8 +7,6 @@ const inputLength = () => userInput.value.length;
 
 // ----- Delete
 const ul = document.querySelector('ul');
-const listOne = document.querySelector('list-one');
-const checkbox = document.querySelectorAll('input[type=checkbox]');
 const delButton = document.querySelector('#erase');
 const active = document.getElementById('act-list')
 const finished = document.getElementById('fin-list');
@@ -25,12 +23,12 @@ const addEnter = () => {
 
 const newItem = () => {
     let li = document.createElement('li');
-    let moveButt = document.createElement('button');
+    let button = document.createElement('button');
     li.classList.add('item');
-    moveButt.innerHTML = 'DONE';
-    moveButt.onclick = moveToDo;
-    moveButt.classList.add('done-button');
-    li.appendChild(moveButt);
+    button.innerHTML = 'DONE';
+    button.onclick = moveToDo;
+    button.classList.add('done-button');
+    li.appendChild(button);
     li.appendChild(document.createTextNode(userInput.value));
     active.appendChild(li);
     userInput.value = '';
@@ -39,27 +37,27 @@ const newItem = () => {
 // Move items ------
 
 const moveToDo = (evt) => {
-    let undoButton = document.createElement('button');
+    let button = document.createElement('button');
     evt.preventDefault();
     let btn = evt.target;
     let li = btn.closest('li');
     btn.remove();
     finished.appendChild(li).classList.add('marked');
-    undoButton.innerHTML = 'UNDO';
-    undoButton.onclick = undoToDo;
-    undoButton.classList.add('undo-button');
-    li.insertBefore(undoButton, li.firstChild);
+    button.innerHTML = 'UNDO';
+    button.onclick = undoToDo;
+    button.classList.add('undo-button');
+    li.insertBefore(button, li.firstChild);
 }
 
 const undoToDo = (evt) => {
-    let moveButt = document.createElement('button');
+    let button = document.createElement('button');
     let btn = evt.target;
     let li = btn.closest('li');
     btn.remove();
-    moveButt.innerHTML = 'DONE';
-    moveButt.onclick = moveToDo;
-    moveButt.classList.add('done-button');
-    li.insertBefore(moveButt, li.firstChild);
+    button.innerHTML = 'DONE';
+    button.onclick = moveToDo;
+    button.classList.add('done-button');
+    li.insertBefore(button, li.firstChild);
     active.appendChild(li).classList.remove('marked');
 }
 
