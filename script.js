@@ -1,15 +1,10 @@
-// Variables -----
-
-// ----- Create
-const enter = document.querySelector('#enter-items');
-const userInput = document.querySelector('#user-input');
-const inputLength = () => userInput.value.length;
-
-// ----- Delete
-const ul = document.querySelector('ul');
-const delButton = document.querySelector('#erase');
-const active = document.getElementById('act-list')
-const finished = document.getElementById('fin-list');
+const enter = document.querySelector('#enter-items'),
+      userInput = document.querySelector('#user-input'),
+      inputLength = () => userInput.value.length,
+      ul = document.querySelector('ul'),
+      delButton = document.querySelector('#erase'),
+      active = document.getElementById('act-list'),
+      finished = document.getElementById('fin-list');
 
 // Create list item ------
 
@@ -37,10 +32,9 @@ const newItem = () => {
 // Move items ------
 
 const moveToDo = (evt) => {
-    let button = document.createElement('button');
-    evt.preventDefault();
-    let btn = evt.target;
-    let li = btn.closest('li');
+    let button = document.createElement('button'),
+        btn = evt.target,
+        li = btn.closest('li');
     btn.remove();
     finished.appendChild(li).classList.add('marked');
     button.innerHTML = 'UNDO';
@@ -50,9 +44,9 @@ const moveToDo = (evt) => {
 }
 
 const undoToDo = (evt) => {
-    let button = document.createElement('button');
-    let btn = evt.target;
-    let li = btn.closest('li');
+    let button = document.createElement('button'),
+        btn = evt.target,
+        li = btn.closest('li');
     btn.remove();
     button.innerHTML = 'DONE';
     button.onclick = moveToDo;
