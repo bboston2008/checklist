@@ -23,12 +23,23 @@ ul {
     padding-left: .25rem;
 }
 
+span {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    border-bottom: 1px solid black;
+}
+
 /* Button Input / Delete -------- */
 
 #button-box {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+    position:fixed;
+    top:10rem;
+    width:100%;
+    z-index:100;
 }
 
 #add-item {
@@ -36,7 +47,6 @@ ul {
     flex-wrap: wrap;
     justify-content: center;   
     margin: 2.5rem;
-    border: 1px solid black;
     border-radius: 20px;
     box-shadow: 3px 3px rgba(0, 0, 0, 0.387);
     padding: 2rem;
@@ -48,7 +58,7 @@ ul {
 #enter-items {
     margin-left: 5px;
     border-radius: 10px;
-    border: 1px solid black;
+    border: none;
     background-image: linear-gradient(to right, #359a1c 0%, #29ce09 51%, #359a1c 100%);
     transition: 0.5s;
     background-size: 200% auto;
@@ -109,16 +119,14 @@ input:-webkit-autofill:active{
 #list-container {
     display: flex;
     flex-wrap: wrap;
-    /* flex-direction: row; */
 }
 
-#active-list {
-    width: 75%;
+#active-list,
+#active-list-2 {
+    width: 50%;
 }
 
 #finished-list {
-    width: 25%;
-    min-width: 15rem;
     overflow: auto;
 }
 
@@ -129,6 +137,20 @@ input:-webkit-autofill:active{
 .list-box {
     display: flex;
     overflow: hidden;
+    flex-direction: column;
+    align-items: flex-start;
+    border: 2px solid black;
+    height: 25rem;
+    font-size: 1rem;
+    margin: 1rem;
+    width: 100%;
+}
+
+.list-box-fin {
+    display: flex;
+    overflow: hidden;
+    flex-direction: column;
+    align-items: flex-start;
     border: 2px solid black;
     height: 25rem;
     font-size: 1rem;
@@ -137,20 +159,13 @@ input:-webkit-autofill:active{
 
 .list {
     display: flex;
-    flex-direction: column;
     flex-wrap: wrap;
     overflow: auto;
-    width: 100%;
 }
 
 .lists {
     display: grid;
     grid-template-rows: 1fr, 1fr;
-}
-
-.fin-box {
-    display: flex;
-    flex-direction: column;
 }
 
 #remove-items {
@@ -174,7 +189,7 @@ input:-webkit-autofill:active{
 }
 
 .item {
-    padding: .3rem;
+    padding: .1rem;
 }
 
 .marked {

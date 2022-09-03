@@ -12,21 +12,36 @@
 <body>
     <div id="button-box">
         <div id="add-item">
+            <div>
                 <label for="user-input">Add item:</label>
                 <input id="user-input" type="text" placeholder="...">
+            </div>
+            <div>
+                <label for="category">Choose a list:</label>
+                <select name="category" id="category">
+                  <option value="Grocery1">Grocery</option>
+                  <option value="ToDo1">ToDo</option>
+                </select>
+            </div>
+            <div>
                 <button id="enter-items" class="grad-butt gradient-button">Enter</button>
+            </div>
         </div>
     </div>
     <div></div>
     <div id="list-container">
-        <div id="active-list">
-            <div class="list-box">
-                <ul id="act-list" class="list">
+        <div class="list-box">
+                <span><h4>Grocery</h4></span>
+                <ul id="act-list" class="list grocery">
                 </ul>
-                </div>
+        </div>
+        <div class="list-box">
+                <span><h4>ToDO</h4></span>
+                <ul id="act-list-2" class="list todo">
+                </ul>
         </div>
         <div id="finished-list">
-            <div class="list-box fin-box">
+            <div class="list-box-fin">
                 <ul id="fin-list" class="list">
                 </ul>
                 <div id="remove-items">
