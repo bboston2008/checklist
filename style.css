@@ -30,43 +30,38 @@ span {
     border-bottom: 1px solid black;
 }
 
-/* Button Input / Delete -------- */
+/* User Input -------- */
 
 #button-box {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
     position:fixed;
     top:10rem;
-    width:100%;
     z-index:100;
-}
-
-#add-item {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;   
-    margin: 2.5rem;
+    
+    display: grid;
+    grid-template-rows: 1fr, 1fr ;
     border-radius: 20px;
     box-shadow: 3px 3px rgba(0, 0, 0, 0.387);
     padding: 2rem;
     width: 25%;
     min-width: 15rem;
-    background: radial-gradient(#be79a0, #8f0353);
+    background: radial-gradient(#78ddea5d, #78ddeac6);
 }
 
 #enter-items {
     margin-left: 5px;
     border-radius: 10px;
     border: none;
-    background-image: linear-gradient(to right, #359a1c 0%, #29ce09 51%, #359a1c 100%);
-    transition: 0.5s;
-    background-size: 200% auto;
-    transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+    background-color: #0df328;
 }
 
 #enter-items:hover {
     background-position: right center;
+}
+
+#notification {
+    height: 0;
+    display: flex;
+    justify-content: center;
 }
 
 #userInput {
@@ -94,14 +89,14 @@ textarea:focus {
 }
 
 input[type="text"], textarea {
-    background-color : #be79a0; 
+    background-color : #7aabd9; 
 }
 
 input:-webkit-autofill,
 input:-webkit-autofill:hover, 
 input:-webkit-autofill:focus, 
 input:-webkit-autofill:active{
-    -webkit-box-shadow: 0 0 0 30px #be79a0 inset;
+    -webkit-box-shadow: 0 0 0 30px #5244cd inset;
 }
 
 #erase {
@@ -110,7 +105,7 @@ input:-webkit-autofill:active{
 }
 
 #erase:hover {
-    background-color: rgb(255, 0, 0, 0.7);
+    background-color: #5244cd;
     border-radius: 10px;
 }
 

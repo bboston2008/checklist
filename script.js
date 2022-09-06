@@ -42,11 +42,6 @@ buttonBox.addEventListener('mousemove', function(event) {
 
 // Create list item ------
 
-// const whichList = () => {
-    
-//     console.log(response);
-// }
-
 const addButton = () => {
     if (inputLength() > 0) { newItem() };
 };
