@@ -23,11 +23,17 @@ ul {
     padding-left: .25rem;
 }
 
-span {
+.titleCount {
     width: 100%;
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     border-bottom: 1px solid black;
+}
+#countWell {
+    width: 5rem;
+    display: flex;
+    justify-content: flex-end;
+    align-content: flex-end;
 }
 
 /* User Input -------- */
@@ -36,8 +42,8 @@ span {
     position:fixed;
     top:10rem;
     z-index:100;
-    
     display: grid;
+    justify-content: center;
     grid-template-rows: 1fr, 1fr ;
     border-radius: 20px;
     box-shadow: 3px 3px rgba(0, 0, 0, 0.387);
@@ -45,6 +51,11 @@ span {
     width: 25%;
     min-width: 15rem;
     background: radial-gradient(#78ddea5d, #78ddeac6);
+}
+
+.button-div {
+    display: flex;
+    justify-content: center;
 }
 
 #enter-items {

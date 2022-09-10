@@ -7,7 +7,8 @@ const enter = document.querySelector('#enter-items'),
       activeTwo = document.getElementById('act-list-2'),
       finished = document.getElementById('fin-list'),
       response = document.getElementById('category').value,
-      buttonBox = document.getElementById('button-box');
+      buttonBox = document.getElementById('button-box'),
+      countWellGrocery = document.getElementById('countWellGrocery');
 
 //Move Div ------
 var mousePosition;
@@ -43,17 +44,23 @@ buttonBox.addEventListener('mousemove', function(event) {
 // Create list item ------
 
 const addButton = () => {
-    if (inputLength() > 0) { newItem() };
+    if (inputLength() > 0) { 
+        newItem();
+     };
 };
 
 const addEnter = () => {
-    if (inputLength() > 0 && event.keyCode === 13) { newItem() };
+    if (inputLength() > 0 && event.keyCode === 13) {
+        newItem();
+    };
 }
 
 const newItem = () => {
     let li = document.createElement('li'),
         button = document.createElement('button'),
-        response = document.getElementById('category').value;
+        response = document.getElementById('category').value,
+        listLengthGrocery = document.getElementById('act-list').getElementsByTagName('li').length + 1,
+        listLengthToDo = document.getElementById('act-list-2').getElementsByTagName('li').length + 1;
     li.classList.add('item');
     button.innerHTML = 'DONE';
     button.onclick = moveToDo;
@@ -63,9 +70,11 @@ const newItem = () => {
     if (response === 'Grocery1') {
         li.classList.add('g');
         active.appendChild(li);
+        countWellGrocery.textContent = listLengthGrocery + ' Item(s)';
     } else if (response === 'ToDo1') {
         li.classList.add('t');
         activeTwo.appendChild(li);
+        countWellToDo.textContent = listLengthToDo + ' Item(s)';
     }
     userInput.value = '';
 }
@@ -75,20 +84,23 @@ const newItem = () => {
 const moveToDo = (evt) => {
     let button = document.createElement('button'),
         btn = evt.target,
-        li = btn.closest('li');
+        li = btn.closest('li'),
+        listLengthGrocery = document.getElementById('act-list').getElementsByTagName('li').length - 1;
     btn.remove();
     finished.appendChild(li).classList.add('marked');
     button.innerHTML = 'UNDO';
     button.onclick = undoToDo;
     button.classList.add('undo-button');
     li.insertBefore(button, li.firstChild);
+    
+    countWellGrocery.textContent= listLengthGrocery + ' Item(s)';
 }
 
 const undoToDo = (evt) => {
     let button = document.createElement('button'),
         btn = evt.target,
-        li = btn.closest('li'),
-        response = document.getElementById('category').value;
+        li = btn.closest('li');
+        listLengthGrocery = document.getElementById('act-list').getElementsByTagName('li').length + 1;
     btn.remove();
     button.innerHTML = 'DONE';
     button.onclick = moveToDo;
@@ -99,6 +111,8 @@ const undoToDo = (evt) => {
     } else  if (li.classList.contains('t')) {
         activeTwo.appendChild(li).classList.remove('marked')
     }
+    
+    countWellGrocery.textContent= listLengthGrocery + ' Item(s)';
 
 }
 

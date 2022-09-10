@@ -11,32 +11,32 @@
 
 <body>
     <div id="button-box">
-            <div>
+            <div class="button-div">
                 <label for="user-input">Add item:</label>
                 <input id="user-input" type="text" placeholder="...">
             </div>
-            <div>
+            <div class="button-div">
                 <label for="category">Choose a list:</label>
                 <select name="category" id="category">
                   <option value="Grocery1">Grocery</option>
                   <option value="ToDo1">ToDo</option>
                 </select>
             </div>
-            <div>
+            <div class="button-div">
                 <button id="enter-items" class="grad-butt gradient-button">Enter</button>
             </div>
-            <div id="notification">
+            <div id="notification" class="button-div">
                (You can  move me!)
             </div>
     </div>
     <div id="list-container">
         <div class="list-box">
-                <span><h4>Grocery</h4></span>
+                <div class="titleCount"><h4>Grocery</h4> <h5 id="countWellGrocery">Item(s)</h5></div>
                 <ul id="act-list" class="list grocery">
                 </ul>
         </div>
         <div class="list-box">
-                <span><h4>ToDO</h4></span>
+                <div class="titleCount"><h4>ToDO</h4> <h5 id="countWellToDO">Item(s)</h5></div>
                 <ul id="act-list-2" class="list todo">
                 </ul>
         </div>
