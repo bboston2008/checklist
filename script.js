@@ -10,37 +10,6 @@ const enter = document.querySelector('#enter-items'),
       buttonBox = document.getElementById('button-box'),
       countWellGrocery = document.getElementById('countWellGrocery');
 
-//Move Div ------
-var mousePosition;
-var offset = [0,0];
-var isDown = false;
-
-buttonBox.addEventListener('mousedown', function(e) {
-    isDown = true;
-    offset = [
-        buttonBox.offsetLeft - e.clientX,
-        buttonBox.offsetTop - e.clientY
-    ];
-}, true);
-
-buttonBox.addEventListener('mouseup', function() {
-    isDown = false;
-}, true);
-
-buttonBox.addEventListener('mousemove', function(event) {
-    event.preventDefault();
-    if (isDown) {
-        mousePosition = {
-    
-            x : event.clientX,
-            y : event.clientY
-    
-        };
-        buttonBox.style.left = (mousePosition.x + offset[0]) + 'px';
-        buttonBox.style.top  = (mousePosition.y + offset[1]) + 'px';
-    }
-}, true);   
-
 // Create list item ------
 
 const addButton = () => {

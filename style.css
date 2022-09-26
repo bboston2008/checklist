@@ -1,14 +1,11 @@
-/* REDS------------ */
+/* Defaults------------ */
 
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
 
 body {
     margin: 0;
     font-family: 'Bebas Neue';
-}
-
-h1 {
-    text-align: center;
+    background-color: #636363;
 }
 
 li {
@@ -23,34 +20,19 @@ ul {
     padding-left: .25rem;
 }
 
-.titleCount {
-    width: 100%;
-    display: flex;
-    justify-content: space-around;
-    border-bottom: 1px solid black;
-}
-#countWell {
-    width: 5rem;
-    display: flex;
-    justify-content: flex-end;
-    align-content: flex-end;
-}
-
 /* User Input -------- */
 
 #button-box {
-    position:fixed;
-    top:10rem;
-    z-index:100;
     display: grid;
     justify-content: center;
-    grid-template-rows: 1fr, 1fr ;
-    border-radius: 20px;
-    box-shadow: 3px 3px rgba(0, 0, 0, 0.387);
-    padding: 2rem;
-    width: 25%;
-    min-width: 15rem;
-    background: radial-gradient(#78ddea5d, #78ddeac6);
+    grid-template-rows: 1fr, 1fr;
+
+    width: 100vw;
+    height: 25%;
+    padding: 2rem 0 2rem 0;
+    
+    background-color: #85C7F2;
+
 }
 
 .button-div {
@@ -60,8 +42,10 @@ ul {
 
 #enter-items {
     margin-left: 5px;
-    border-radius: 10px;
+
+    border-radius: 8px;
     border: none;
+
     background-color: #0df328;
 }
 
@@ -70,9 +54,10 @@ ul {
 }
 
 #notification {
-    height: 0;
     display: flex;
     justify-content: center;
+
+    height: 0;
 }
 
 #userInput {
@@ -83,6 +68,7 @@ textarea {
     border: none;
     overflow: auto;
     outline: none;
+
     -webkit-box-shadow: none;
     -moz-box-shadow: none;
     box-shadow: none;
@@ -93,6 +79,7 @@ textarea:focus {
     border: none; 
     overflow: auto; 
     outline: none; 
+
     -webkit-box-shadow: none; 
     -moz-box-shadow: none; 
     box-shadow: none; 
@@ -111,33 +98,44 @@ input:-webkit-autofill:active{
 }
 
 #erase {
-    height: fit-content;
+    height: 1.5rem;
+
     border-radius: 10px;
+    border: none;
 }
 
 #erase:hover {
-    background-color: #5244cd;
     border-radius: 10px;
+
+    background-color: #5244cd;
 }
 
-/* List Boxes--------- */
+/* --------------------------------List Boxes--------- */
+
+/* Counters */
+
+.titleCount {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    border-bottom: 1px solid black;
+}
+#countWell {
+    width: 5rem;
+    display: flex;
+    justify-content: flex-end;
+    align-content: flex-end;
+}
+
+
+
+/* Contianers */
 
 #list-container {
     display: flex;
+    justify-content: center;
     flex-wrap: wrap;
-}
-
-#active-list,
-#active-list-2 {
-    width: 50%;
-}
-
-#finished-list {
-    overflow: auto;
-}
-
-#fin-list {
-    height: 80%;
+    width: 100%;
 }
 
 .list-box {
@@ -145,12 +143,18 @@ input:-webkit-autofill:active{
     overflow: hidden;
     flex-direction: column;
     align-items: flex-start;
-    border: 2px solid black;
+    /* border: 2px solid black; */
     height: 25rem;
     font-size: 1rem;
     margin: 1rem;
-    width: 100%;
+    width: 20%;
+    box-shadow: inset 2px 2px 8px 4px rgba(0, 0, 0, 0.256);
+    background-color: #D1D1D1;
 }
+
+
+
+/* Lists */
 
 .list-box-fin {
     display: flex;
@@ -161,6 +165,7 @@ input:-webkit-autofill:active{
     height: 25rem;
     font-size: 1rem;
     margin: 1rem;
+    width:100%;
 }
 
 .list {
@@ -169,20 +174,23 @@ input:-webkit-autofill:active{
     overflow: auto;
 }
 
-.lists {
-    display: grid;
-    grid-template-rows: 1fr, 1fr;
+#fin-list {
+    height: 80%;
 }
 
-#remove-items {
+.delete {
     display: flex;
     justify-content: center;
     align-items: center;
     border-top: 1px solid black;
-    height: 20%;
+    width: 100%;
+    height: 10%;
 }
 
-/* List Items-------- */
+
+
+
+/* ------------------------List Items-------- */
 
 .done-button, 
 .undo-button {
